@@ -39,7 +39,19 @@ public class Lab02 {
         System.out.println("The Average Number of Array is: " + (averageNumber / myArr.length));
 
         // Re-arrange array
-        int[] reArrangeList = new int[] {9,3, 6, 4, 1, 9, 8, 2, 3};
+        int[] reArrangeList = new int[] {9, 3, 6, 4, 1, 9, 8, 2, 3};
+        for (int i = reArrangeList.length - 1; i > 0; i--) {
+            for (int j = 0 ; j < i; j++) {
+                if (reArrangeList[j] > reArrangeList[j+1]) {
+                    int g = reArrangeList[j];
+                    reArrangeList[j] = reArrangeList [j+1];
+                    reArrangeList[j+1] = g;
+                }
+            }
+        }
+        for (int h: reArrangeList) {
+            System.out.print(h);
+        }
 
 
 
