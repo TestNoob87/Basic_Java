@@ -1,23 +1,14 @@
 package Lab07;
 
-public class CEO {
-    private int salary = 100000;
-    private int supportSalary = 0;
+public class CEO extends InfoOfEmployee {
 
-    public int getSalary() {
-        return salary;
+    public int getEmployeeSalary() {
+        return 100000;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
+    public int getEmployeeSupportSalary() {
+        return 0;
     }
 
-    public int getSupportSalary() {
-        return supportSalary;
-    }
-
-    public void setSupportSalary(int supportSalary) {
-        this.supportSalary = supportSalary;
-    }
 
 }

@@ -1,23 +1,14 @@
 package Lab07;
 
-public class Manager {
+public class Manager extends InfoOfEmployee {
 
-    private int salary = 50000;
-    private int supportSalary = 3000;
-
-    public int getSalary() {
-        return salary;
+    public int getEmployeeSalary() {
+        return 50000;
     }
 
-    public void setSalary(int salary) {
-        this.salary = salary;
+    public int getEmployeeSupportSalary() {
+        return 3000;
     }
 
-    public int getSupportSalary() {
-        return supportSalary;
-    }
 
-    public void setSupportSalary(int supportSalary) {
-        this.supportSalary = supportSalary;
-    }
 }
