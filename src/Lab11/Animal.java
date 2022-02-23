@@ -4,8 +4,10 @@ import java.security.SecureRandom;
 
 public abstract class Animal {
 
-    public String nameOfAnimal;
-    private int speedAnimal;
+    public String name;
+    private final int speedAnimal;
+
+    protected abstract boolean flyAble();
 
     public Animal(int maxSpeed) {
         this.speedAnimal = new SecureRandom().nextInt(maxSpeed + 1);
@@ -16,10 +18,7 @@ public abstract class Animal {
     }
 
     protected String getAnimalName() {
-        String nameOfAnimal = getClass().getSimpleName();
-        return nameOfAnimal;
+        return getClass().getSimpleName();
     }
-
-    protected abstract boolean flyAble();
 
 }

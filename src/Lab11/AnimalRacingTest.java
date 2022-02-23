@@ -36,6 +36,7 @@ public class AnimalRacingTest {
         Animal falcon = new Falcon(FalconMaxSpeed);
         Animal eagle = new Eagle(EagleMaxSpeed);
 
+
         List<Animal> animalList = Arrays.asList(dog, horse, tiger, eagle, falcon);
         Animal winner = animalRacingTest(animalList);
         System.out.println("The winner is: " + winner.getAnimalName() + " with winner speed is: " + winner.getSpeedAnimal());
