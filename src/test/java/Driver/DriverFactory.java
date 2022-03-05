@@ -1,14 +1,17 @@
+package Driver;
 
 import org.apache.commons.exec.OS;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-public class LaunchBrowser {
+import java.time.Duration;
 
-    public static void main(String[] args) throws InterruptedException {
-        //Location of WebDriver
-        String chromeDriverLocation = null;
+public class DriverFactory {
+
+    public static WebDriver getChromeDriver() {
+
+        String chromeDriverLocation;
         String currentProjectLocation = System.getProperty("user.dir");
         chromeDriverLocation = OS.isFamilyMac()
                 ? currentProjectLocation.concat("/src/test/resources/drivers/chromedriver")
@@ -22,12 +25,8 @@ public class LaunchBrowser {
         System.setProperty("webdriver.chrome.driver", chromeDriverLocation);
 
         //Open WebPage
-        WebDriver driver = new ChromeDriver(chromeOptions); // Start Webdriver Server
-        driver.get("https://www.gmail.com"); // Executed command
-
-        Thread.sleep(3000); // Set up hold time to check
-        driver.close(); //Close browser but not quit all session
-        driver.quit(); //Close browser and quit all session
-
+        WebDriver driver = new ChromeDriver(chromeOptions);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        return driver;
     }
 }
